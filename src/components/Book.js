@@ -7,10 +7,11 @@ function Book(props) {
   return (
     <div>
       <ul>
-        <li>{title}</li>
-        <li>{author}</li>
+        <li>
+            {title}<br></br>{author}
+            <button type="button">Remove</button>
+        </li>
       </ul>
-      <button type="button">Remove</button>
     </div>
   );
 }
