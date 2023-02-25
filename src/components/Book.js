@@ -8,8 +8,10 @@ function Book(props) {
     <div>
       <ul>
         <li>
-            {title}<br></br>{author}
-            <button type="button">Remove</button>
+          {title}
+          <br />
+          {author}
+          <button type="button">Remove</button>
         </li>
       </ul>
     </div>
