@@ -145,6 +145,6 @@ I would like to acknowledge Microverse for the training required to fulfill this
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/Thoth1111/my-book-store/blob/develop/LICENSE) licensed.
+This project is [MIT](https://github.com/Thoth1111/my-book-store/blob/initialize-project/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
