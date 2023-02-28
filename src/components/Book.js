@@ -1,30 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
-function Book(props) {
-  const { title, author } = props;
-
+const Book = () => {
+  const books = useSelector(state => state.books);
+  const dispatch = useDispatch();
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+  };
+  
   return (
-    <tr>
-      <td>
-        {title}
-        {' '}
-        by
-        {' '}
-        {author}
-      </td>
-      <td>
-        <button type="button" className="remove_btn">
-          Remove
-        </button>
-      </td>
-    </tr>
+    <tbody className="table_body">
+      {books.map((book) => (
+        <tr>
+          <td key={book.id}>
+            {book.title}
+            {' '}
+            by
+            {' '}
+            {book.author}
+          </td>
+          <td>
+            <button type="button" className="remove_btn"
+            onClick={() => handleRemoveBook(book.id)}>
+            Remove
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>   
   );
-}
-
-Book.propTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
 };
 
-export default Book;
+export default Book
