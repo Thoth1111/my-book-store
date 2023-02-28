@@ -5,16 +5,20 @@ function Book(props) {
   const { title, author } = props;
 
   return (
-    <div>
-      <ul>
-        <li>
-          {title}
-          <br />
-          {author}
-          <button type="button">Remove</button>
-        </li>
-      </ul>
-    </div>
+    <tr>
+      <td>
+        {title}
+        {' '}
+        by
+        {' '}
+        {author}
+      </td>
+      <td>
+        <button type="button" className="remove_btn">
+          Remove
+        </button>
+      </td>
+    </tr>
   );
 }
 
