@@ -12,8 +12,8 @@ const Book = () => {
   return (
     <tbody className="table_body">
       {books.map((book) => (
-        <tr>
-          <td key={book.id}>
+        <tr key={book.id}>
+          <td>
             {book.title}
             {' '}
             by
