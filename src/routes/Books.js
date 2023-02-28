@@ -1,14 +1,14 @@
 import React from 'react';
-import Book from '../components/Book';
 import Form from '../components/Form';
+import Book from '../components/Book';
 
-function Books() {
-  return (
-    <>
-      <Book title="A Short History of Nearly Everything" author="Bill Bryson" />
-      <Form />
-    </>
-  );
-}
+const Books = () => (
+  <>
+    <table className="table">
+      <Book />
+    </table>
+    <Form />
+  </>
+);
 
 export default Books;
