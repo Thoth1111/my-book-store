@@ -30,8 +30,9 @@ export const booksSlice = createSlice({
       const { title, author } = action.payload;
       if (title && author) {
         const newBook = { id: uuidv4(), title, author };
-        state.push(newBook);
+        return [...state, newBook];
       }
+      return state;
     },
     removeBook: (state, action) => {
       const index = action.payload;
