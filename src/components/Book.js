@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { fetchBooks, removeBook } from '../redux/books/booksSlice';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
@@ -8,6 +8,10 @@ const Book = () => {
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
   };
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   return (
     <tbody className="table_body">
@@ -20,6 +24,9 @@ const Book = () => {
             {' '}
             {book.author}
           </td>
+          {/* <td>
+            {book.category}
+          </td> */}
           <td>
             <button
               type="button"
