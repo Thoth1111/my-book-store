@@ -4,17 +4,14 @@ import { checkStatus } from '../redux/categories/categoriesSlice';
 
 function Categories() {
   const dispatch = useDispatch();
-  const handleCheckStatus = () => {
-    dispatch(checkStatus());
-  };
 
   return (
     <div>
       <button
         type="button"
-        onClick={handleCheckStatus}
+        onClick={() => dispatch(checkStatus('Under construction'))}
       >
-        Check Status
+        Check status
       </button>
     </div>
   );
