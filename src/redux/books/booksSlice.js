@@ -14,8 +14,8 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   return data;
 });
 
-export const updateBooks = createAsyncThunk('books/addBook', async (newBook) => {
-  const { data } = await (axios.get(BOOKS_URL, newBook));
+export const updateBooks = createAsyncThunk('books/addBook', async (obj) => {
+  const { data } = await (axios.post(BOOKS_URL, obj));
   return data;
 });
 
@@ -43,8 +43,7 @@ export const booksSlice = createSlice({
         Object.entries(action.payload).map(([key, value]) => {
           const data = value.map((item) => ({ ...item, id: key }));
           booksArr.push(...data);
-          state.books = booksArr;
-          return state.books;
+          return ({ ...state, books: booksArr });
         });
       })
       .addCase(fetchBooks.rejected, (state, action) => ({ ...state, status: 'Failed', error: action.error.message }))

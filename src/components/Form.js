@@ -25,11 +25,11 @@ const Form = () => {
     };
     dispatch(addBook(newBook));
     dispatch(updateBooks(newBook));
-    setNewTitle('');
-    setNewAuthor('');
     setTimeout(() => {
       dispatch(fetchBooks);
     }, 800);
+    setNewTitle('');
+    setNewAuthor('');
   };
 
   return (
