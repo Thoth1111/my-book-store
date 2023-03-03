@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks, removeBook } from '../redux/books/booksSlice';
 
@@ -10,10 +10,6 @@ const Book = () => {
   //   dispatch(removeBook(id));
   //   dispatch(fetchBooks());
   // };
-
-  // useEffect(() => {
-  //   dispatch(fetchBooks());
-  // }, [dispatch]);
 
   return (
     <tbody className="table_body">

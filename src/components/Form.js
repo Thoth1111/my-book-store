@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, updateBooks, fetchBooks } from '../redux/books/booksSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
-  const [newTitle, setNewTitle] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
+  const [title, setNewTitle] = useState('');
+  const [author, setNewAuthor] = useState('');
+
+  const newBook = {
+    item_id: uuidv4(),
+    title,
+    author,
+    category: '',
+  };
 
   const handleNewTitleChange = (event) => {
     setNewTitle(event.target.value);
@@ -16,14 +23,14 @@ const Form = () => {
     setNewAuthor(event.target.value);
   };
 
-  const handleAddBook = () => {
-    const newBook = {
-      item_id: uuidv4(), title: newTitle, author: newAuthor, category: '',
-    };
-    console.log(newBook);
-    dispatch(addBook(newBook));
+  const handleAddBook = (obj) => {
+    dispatch(addBook(obj));
+    dispatch(updateBooks(obj));
     setNewTitle('');
     setNewAuthor('');
+    setTimeout(() => {
+      dispatch(fetchBooks);
+    }, 1000);
   };
 
   return (
@@ -34,7 +41,7 @@ const Form = () => {
           name="title"
           id="title"
           required
-          value={newTitle}
+          value={title}
           onChange={handleNewTitleChange}
           placeholder="Add Book Title"
         />
@@ -43,13 +50,13 @@ const Form = () => {
           name="author"
           id="author"
           required
-          value={newAuthor}
+          value={author}
           onChange={handleNewAuthorChange}
           placeholder="Add Book Author"
         />
         <button
           type="button"
-          onClick={handleAddBook}
+          onClick={handleAddBook(newBook)}
         >
           Add Book
         </button>
