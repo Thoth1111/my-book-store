@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook, updateBooks, fetchBooks } from '../redux/books/booksSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,17 @@ const Form = () => {
   };
 
   const handleAddBook = () => {
-    dispatch(addBook({ title: newTitle, author: newAuthor }));
+    const newBook = {
+      item_id: uuidv4(),
+      title: newTitle,
+      author: newAuthor,
+      category: '',
+    };
+    dispatch(addBook(newBook));
+    dispatch(updateBooks(newBook));
+    setTimeout(() => {
+      dispatch(fetchBooks);
+    }, 800);
     setNewTitle('');
     setNewAuthor('');
   };
