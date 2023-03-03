@@ -43,7 +43,8 @@ export const booksSlice = createSlice({
         Object.entries(action.payload).map(([key, value]) => {
           const data = value.map((item) => ({ ...item, id: key }));
           booksArr.push(...data);
-          return ({ ...state, books: booksArr, status: 'Succeeded' });
+          state.books = booksArr;
+          return state.books;
         });
       })
       .addCase(fetchBooks.rejected, (state, action) => ({ ...state, status: 'Failed', error: action.error.message }))

@@ -5,15 +5,8 @@ import { addBook, updateBooks, fetchBooks } from '../redux/books/booksSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
-  const [title, setNewTitle] = useState('');
-  const [author, setNewAuthor] = useState('');
-
-  const newBook = {
-    item_id: uuidv4(),
-    title,
-    author,
-    category: '',
-  };
+  const [newTitle, setNewTitle] = useState('');
+  const [newAuthor, setNewAuthor] = useState('');
 
   const handleNewTitleChange = (event) => {
     setNewTitle(event.target.value);
@@ -23,14 +16,20 @@ const Form = () => {
     setNewAuthor(event.target.value);
   };
 
-  const handleAddBook = (obj) => {
-    dispatch(addBook(obj));
-    dispatch(updateBooks(obj));
+  const handleAddBook = () => {
+    const newBook = {
+      item_id: uuidv4(),
+      title: newTitle,
+      author: newAuthor,
+      category: '',
+    };
+    dispatch(addBook(newBook));
+    dispatch(updateBooks(newBook));
     setNewTitle('');
     setNewAuthor('');
     setTimeout(() => {
       dispatch(fetchBooks);
-    }, 1000);
+    }, 800);
   };
 
   return (
@@ -41,7 +40,7 @@ const Form = () => {
           name="title"
           id="title"
           required
-          value={title}
+          value={newTitle}
           onChange={handleNewTitleChange}
           placeholder="Add Book Title"
         />
@@ -50,13 +49,13 @@ const Form = () => {
           name="author"
           id="author"
           required
-          value={author}
+          value={newAuthor}
           onChange={handleNewAuthorChange}
           placeholder="Add Book Author"
         />
         <button
           type="button"
-          onClick={handleAddBook(newBook)}
+          onClick={handleAddBook}
         >
           Add Book
         </button>
