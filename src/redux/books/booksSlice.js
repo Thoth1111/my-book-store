@@ -43,7 +43,10 @@ export const booksSlice = createSlice({
         Object.entries(action.payload).map(([key, value]) => {
           const data = value.map((item) => ({ ...item, id: key }));
           booksArr.push(...data);
-          return ({ ...state, books: booksArr });
+          /* eslint-disable no-param-reassign */
+          state.books = booksArr;
+          /* eslint-disable no-param-reassign */
+          return state.books;
         });
       })
       .addCase(fetchBooks.rejected, (state, action) => ({ ...state, status: 'Failed', error: action.error.message }))
