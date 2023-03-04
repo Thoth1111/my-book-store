@@ -1,28 +1,28 @@
 #form-header {
-    color: #888888;
+  color: #888;
 }
 
 form {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #title {
-    width: 30%;
-    height: 30px;
+  width: 30%;
+  height: 30px;
 }
 
 #author {
-    width: 25%;
-    height: 30px;
+  width: 25%;
+  height: 30px;
 }
 
 #add-btn {
-    outline: none;
-    border: none;
-    width: 20%;
-    height: 40px;
-    color: #fff;
-    background-color: #0290FF;
-    border-radius: 4px;
+  outline: none;
+  border: none;
+  width: 20%;
+  height: 40px;
+  color: #fff;
+  background-color: #0290ff;
+  border-radius: 4px;
 }
