@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook, updateBooks, fetchBooks } from '../redux/books/booksSlice';
+import '../styles/form.css';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const Form = () => {
 
   return (
     <div>
+      <h3 id="form-header">ADD NEW BOOK</h3>
       <form>
         <input
           type="text"
@@ -55,6 +57,7 @@ const Form = () => {
         />
         <button
           type="button"
+          id="add-btn"
           onClick={handleAddBook}
         >
           Add Book

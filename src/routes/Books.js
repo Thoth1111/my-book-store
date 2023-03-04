@@ -6,7 +6,7 @@ import '../styles/books.css';
 const Books = () => (
   <section className="books-cont">
     <Book />
-    <hr />
+    <hr className="line-3" />
     <Form />
   </section>
 );

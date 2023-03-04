@@ -4,7 +4,7 @@
     gap: 10px;
     background-color: #FAFAFA;
     margin: -75px 5%;
-    padding: 30px;
+    padding: 80px;
     height: auto;
 }
 
@@ -77,4 +77,9 @@
 
 .chapt-no {
     color: #606060;
+}
+
+.line-3 {
+    width: 100%;
+    color: #F3F3F3;
 }
