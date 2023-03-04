@@ -1,18 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
+import '../styles/nav.css';
 
 function Navigation() {
   return (
-    <div>
+    <nav>
       <ul>
         <li>
-          <Link to="/">Books</Link>
+          <h1>Bookstore CMS</h1>
         </li>
         <li>
-          <Link to="/categories">Categories</Link>
+          <Link className="links" to="/">BOOKS</Link>
+        </li>
+        <li>
+          <Link className="links" to="/categories">CATEGORIES</Link>
         </li>
       </ul>
-    </div>
+      <div className="avatar-cont">
+        <FaUser className="avatar" />
+      </div>
+    </nav>
   );
 }
 
