@@ -14,13 +14,13 @@
   gap: 10%;
   margin-bottom: 10px;
   padding: 10px 40px;
-  padding-right: 300px;
+  padding-right: 15%;
   background-color: #fff;
   box-shadow: 0 0 10px 5px rgba(238, 239, 243, 0.8);
 }
 
 .bk-details {
-  width: 50%;
+  width: 40%;
 }
 
 .entry-category {
@@ -72,7 +72,7 @@
 
 .stats {
   padding: 0;
-  margin-left: -70px;
+  margin-left: -60px;
   margin-top: -15px;
 }
 
@@ -87,7 +87,7 @@
 
 .end-section {
   padding: 0;
-  width: 25%;
+  width: 200px;
   margin-left: -30px;
 }
 
