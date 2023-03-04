@@ -42,13 +42,13 @@ const Book = () => {
           <div className="progress-cont">
             <CircularProgressbar value={66} />
           </div>
-          <div>
+          <div className="stats">
             <span className="percentage">64%</span>
             <br />
             <span className="entry-completed">Completed</span>
           </div>
           <hr className="vertical line-2" />
-          <div>
+          <div className="end-section">
             <h4 className="entry-chapter">CURRENT CHAPTER</h4>
             <h4 className="chapt-no">Chapter 17</h4>
             <button type="button" className="btn-type2">UPDATE PROGRESS</button>

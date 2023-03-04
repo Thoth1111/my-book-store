@@ -14,8 +14,13 @@
   gap: 10%;
   margin-bottom: 10px;
   padding: 10px 40px;
+  padding-right: 300px;
   background-color: #fff;
   box-shadow: 0 0 10px 5px rgba(238, 239, 243, 0.8);
+}
+
+.bk-details {
+  width: 50%;
 }
 
 .entry-category {
@@ -30,6 +35,7 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
+  width: 15%;
 }
 
 .btn-type1 {
@@ -54,12 +60,20 @@
 }
 
 .progress-cont {
-  height: 80px;
-  width: 80px;
+  margin: 0;
+  padding: 0;
+  height: 90px;
+  width: 100px;
 }
 
 .percentage {
   font-size: 30px;
+}
+
+.stats {
+  padding: 0;
+  margin-left: -70px;
+  margin-top: -15px;
 }
 
 .entry-completed {
@@ -67,8 +81,14 @@
 }
 
 .line-2 {
-  height: 80px;
+  height: 120px;
   color: #f5f5f5;
+}
+
+.end-section {
+  padding: 0;
+  width: 25%;
+  margin-left: -30px;
 }
 
 .entry-chapter {
