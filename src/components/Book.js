@@ -40,7 +40,7 @@ const Book = () => {
             </div>
           </div>
           <div className="progress-cont">
-            <CircularProgressbar value={64}/>
+            <CircularProgressbar value={64} />
           </div>
           <div className="stats">
             <span className="percentage">64%</span>
